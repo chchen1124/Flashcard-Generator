@@ -1,4 +1,4 @@
-var BasicCard=require("./BasicCard.js");
+var inquirer=require("inquirer");
 
 //ClozeCard constructor with properties of fullText and cloze
 var ClozeCard=function(text,cloze)
@@ -12,12 +12,6 @@ ClozeCard.prototype.partial=function()
 {
 	console.log(" ... "+this.fullText.substring(this.fullText.indexOf("is")));
 }
-
-//create the basic cards
-var card1=new BasicCard("What is Newton's second law","Force and Acceleration");
-var card2=new BasicCard("What is the value of the gravitational acceleration","10 m/(s^2)");
-var card3=new BasicCard("What is the formula for momentum","Mass times velocity");
-var card4=new BasicCard("What is the formula for Kinetic Energy","KE=0.5*m*v*v");
 
 //create the cloze cards
 var c1=new ClozeCard("Force and Acceleration is Newton's second law","Force and Acceleration");
@@ -41,6 +35,7 @@ function GetCardInfo()
 {
 	var ctn=0;
 	var g,h;
+
 	//loops through the entire array
 	while(ctn<clozeCardArr.length)
 	{
@@ -51,9 +46,10 @@ function GetCardInfo()
 		//if the full text includes the cloze text and the cloze text doesn't include is, then print out the full text, cloze text, and the partial text		
 		if(g.includes(h)&&(!(h).includes("is")))
 		{
+			clozeCardArr[ctn].partial();
 			console.log(g);
 			console.log(h);
-			clozeCardArr[ctn].partial();
+
 		}
 		//else print out an error message stating that the cloze is not within the full text
 		else
@@ -63,6 +59,7 @@ function GetCardInfo()
 		console.log("------------------------------");
 		ctn++;
 	}
+
 }
 
 //exports the constructor for creating cloze cards

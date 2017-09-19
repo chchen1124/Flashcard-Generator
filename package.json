@@ -1,0 +1,23 @@
+{
+  "name": "flash-cards",
+  "version": "1.0.0",
+  "description": "",
+  "main": "BasicCard.js",
+  "dependencies": {
+    "inquirer": "^3.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chchen1124/Flashcard-Generator.git"
+  },
+  "author": "Christopher Chen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chchen1124/Flashcard-Generator/issues"
+  },
+  "homepage": "https://github.com/chchen1124/Flashcard-Generator#readme"
+}
